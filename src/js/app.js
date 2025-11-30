@@ -1,6 +1,6 @@
 import goblinImage from '../img/goblin.png';
 
-// Game field
+// Создание поля
 const gameField = document.getElementById('gameField');
 const fieldSize = 4;
 
