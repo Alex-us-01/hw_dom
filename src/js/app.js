@@ -58,12 +58,21 @@ function moveCharacter() {
     
     // Move character
     cells[currentPosition].removeChild(character);
-    cells[newPosition].appendChild(character);
+    cells[newPosition].append(character);
 }
 
 // Character init
 createGrid();
 placeCharacter();
 
+let gameInterval;
+
 // Timer
-setInterval(moveCharacter, 1000);
+const startGame = () => {
+    gameInterval = setInterval(moveCharacter, 1000);
+};
+
+//Timer stop
+const stopGame = () => {
+    clearInterval(gameInterval);
+};
