@@ -1,23 +1,24 @@
-// TODO: write code here
+import goblinImage from '../img/goblin.png';
+
 // Game field
 const gameField = document.getElementById('gameField');
 const fieldSize = 4;
 
 // Grid
+const createGrid = () => {
 for (let i = 0; i < fieldSize * fieldSize; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
-    gameField.appendChild(cell);
-}
+    gameField.append(cell);
+    }
+};
 
 // Character
-import goblinImage from '../img/goblin.png';
 const character = document.createElement('img');
-character.src = goblinImage; // Используем импортированный путь
+character.src = goblinImage; //
 character.alt = 'goblin';
-document.body.appendChild(character);
-// const character = document.createElement('img');
-// character.src = './img/goblin.png';
+document.body.append(character);
+
 
 // Random number generator
 function getRandomInt(min, max) {
@@ -33,7 +34,7 @@ function placeCharacter() {
     character.remove();
     
     // New position
-    cells[randomCell].appendChild(character);
+    cells[randomCell].append(character);
 }
 
 // Moving a character
@@ -61,6 +62,7 @@ function moveCharacter() {
 }
 
 // Character init
+createGrid();
 placeCharacter();
 
 // Timer
